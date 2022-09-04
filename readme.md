@@ -34,7 +34,8 @@ Start your new Tezos project faster than you prepare cup of tea. :)
 4. (optional) Edit `app.hjson` to adjust template behavior
    - **You should set id to name of your project.** (Build and deploy commands use this id to name files)
 5. `ami setup` (Downloads ligo if needed)
-6. You are ready to code
+6. (optional) to develop js module run `npm install` from within the `web` directory
+7. You are ready to code
 
 **NOTE**: *TEA is fully self contained template. No behavior is specified in outside packages or set in stone. You can adjust it however you like. Just edit behavior within `__tea` directory.* ;)
 
