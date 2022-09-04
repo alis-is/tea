@@ -1,0 +1,9 @@
+name: TEA SCT
+description: TEA Smart Contract Template
+authors: [
+	V <admin@alis.is>
+]
+homepage: https://github.com/alis-is/tea
+interfaces: [
+    TZIP-16-21fb73fe
+]

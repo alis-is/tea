@@ -1,0 +1,9 @@
+* text=auto
+
+*.lua		eol=lf
+*.ligo		eol=lf
+*.mligo		eol=lf
+*.jsligo	eol=lf
+*.religo	eol=lf
+*.hjson 	eol=lf
+*.json 	eol=lf

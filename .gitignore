@@ -1,0 +1,18 @@
+# ami & eli definitions
+__tea/.ami-definitions/eli/*
+!__tea/.ami-definitions/eli/.gitkeep
+__tea/.ami-definitions/ami/*
+!__tea/.ami-definitions/ami/.gitkeep
+__tea/bin/*
+!__tea/bin/.gitkeep
+
+# ligo
+**/.ligo-work
+
+# build
+build/*
+!build/.gitkeep
+
+# deploy
+deploy/*
+!deploy/.gitkeep

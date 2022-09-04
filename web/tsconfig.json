@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "ES2019",
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"allowJs": true,
+		"jsx": "preserve",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"sourceMap": true,
+		"baseUrl": "./",
+		"strict": true,
+		"declaration": true,
+		"paths": {
+			"@src/*": [
+				"src/*"
+			],
+			"@root/*": [
+				"./*"
+			]
+		},
+		"allowSyntheticDefaultImports": true,
+	},
+	"include": [
+		"src"
+	]
+}

@@ -1,0 +1,36 @@
+[
+    {
+        name: get_state
+        description: Gets value of state
+        pure: true
+        implementations: [
+            {
+                michelsonStorageView: {
+                    parameter: {
+						prim: unit
+					}
+                    returnType: {
+                        prim: nat
+                    }
+                }
+            }
+        ]
+    }
+	{
+        name: get_lock_state
+        description: Gets value of state
+        pure: true
+        implementations: [
+            {
+                michelsonStorageView: {
+                    parameter: {
+						prim: unit
+					}
+                    returnType: {
+                        prim: bool
+                    }
+                }
+            }
+        ]
+    }
+]

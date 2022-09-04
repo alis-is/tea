@@ -1,0 +1,60 @@
+id: tea-contract-template
+type: standalone
+configuration: {
+	deploys: {
+		sandbox: {
+			// alice key from sandbox
+			admin-addr: '"tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"'
+			kind: sandbox-tezos-client
+			// path: tezos-client
+			source: alice
+			burn-cap: 5
+
+			// requires installed tezos-client
+			// 	kind: tezos-client
+			// 	// path: tezos-client
+			// 	source: alice
+			// burn-cap: 5
+
+			// requires installed js modules
+			// 	kind: taquito
+			//  rpc: <url>
+			// 	// path: tezos-client
+			// 	source: edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
+		}
+	}
+	ligo: {
+		version: latest
+		// or exact
+		// version: 0.50.0
+		// or container
+		// image: ligolang/ligo:0.49.0
+		protocol: kathmandu
+		// initial-storage-args: (${admin-addr}: address), ${metadata}
+	}
+	sandbox: {
+		// name: tezos-sandbox
+		// defaults to `sandbox-${id}`
+		image: oxheadalpha/flextesa:20220715
+		script: kathmandubox
+		// rpc_port: 20000
+	}
+	metadata: {
+		// source: src/metadata.hjson
+		// offchain-views: src/offchain-views.hjson
+		// indent: false
+		// offchain-view-expression-suffix: _off_chain_view
+	}
+	compile: {
+		//tz: true
+		//json: true
+	}
+	tests: {
+		// root: by default looks up all.* in tests directory
+		// root: tests/all.mligo
+	}
+	// usually autodetected
+	// containers: {
+	// 	engine: docker
+	// }
+}
