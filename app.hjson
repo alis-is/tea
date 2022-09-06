@@ -15,12 +15,13 @@ configuration: {
 			// 	// path: tezos-client
 			// 	source: alice
 			// burn-cap: 5
-
+		}
+		sandbox-taquito: {
 			// requires installed js modules
-			// 	kind: taquito
-			//  rpc: <url>
-			// 	// path: tezos-client
-			// 	source: edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
+			admin-addr: '"tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"'
+			kind: taquito
+			rpc: http://127.0.0.1:20000
+			source: edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
 		}
 	}
 	ligo: {

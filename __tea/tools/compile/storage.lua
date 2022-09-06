@@ -19,14 +19,14 @@ for id, vars in pairs(_computed.DEPLOYS) do
 	vars = util.merge_tables(_computed.LIGO_VARS, vars, true)
 	vars = util.merge_tables(vars, { DEPLOY = id, metadata = _ok and _metadata or nil --[[requires 2 pass]] }, true)
 	-- first pass - replace common
-	_cmd = string.interpolate(_cmd, vars)
+	local _preprocessedCmd = string.interpolate(_cmd, vars)
 	if _computed.COMPILE.TZ then
 		local _vars = util.merge_tables(vars, {
 			FORMAT = "text",
 			SUFFIX = ".tz",
 		})
 		log_info("Compiling initial storage tz for ${DEPLOY}...", _vars)
-		local _ok = os.execute(string.interpolate(_cmd, _vars))
+		local _ok = os.execute(string.interpolate(_preprocessedCmd, _vars))
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _vars))
 	end
@@ -37,7 +37,7 @@ for id, vars in pairs(_computed.DEPLOYS) do
 			SUFFIX = ".json",
 		})
 		log_info("Compiling initial storage json for ${DEPLOY}...", _vars)
-		local _ok = os.execute(string.interpolate(_cmd, _vars))
+		local _ok = os.execute(string.interpolate(_preprocessedCmd, _vars))
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _computed))
 	end
