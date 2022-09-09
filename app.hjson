@@ -30,6 +30,7 @@ configuration: {
 		// version: 0.50.0
 		// or container
 		// image: ligolang/ligo:0.49.0
+		// syntax: cameligo
 		protocol: kathmandu
 		// initial-storage-args: (${admin-addr}: address), ${metadata}
 	}
