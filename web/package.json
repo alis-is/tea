@@ -11,7 +11,8 @@
     "test-selection": "ava --no-worker-threads -v --serial --timeout 10m",
     "build": "run-p build:*",
     "build:es": "tsc --outDir dist/es --module esnext",
-    "build:cjs": "tsc --outDir dist/cjs --module commonjs"
+    "build:cjs": "tsc --outDir dist/cjs --module commonjs",
+    "update-deps": "ncu --interactive --dep 'prod,dev,bundle,optional,peer'"
   },
   "author": "alis.is",
   "license": "MIT",
@@ -19,14 +20,15 @@
     "ava": "^4.3.3",
     "hjson": "^3.2.2",
     "lodash-es": "^4.17.21",
+    "npm-check-updates": "^16.1.3",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   },
   "peerDependencies": {
-    "@taquito/michel-codec": "^13.0.1",
-    "@taquito/signer": "^13.0.1",
-    "@taquito/taquito": "^13.0.1",
-    "@taquito/tzip12": "^13.0.1",
-    "@taquito/tzip16": "^13.0.1"
+    "@taquito/michel-codec": "^14.0.0",
+    "@taquito/signer": "^14.0.0",
+    "@taquito/taquito": "^14.0.0",
+    "@taquito/tzip12": "^14.0.0",
+    "@taquito/tzip16": "^14.0.0"
   }
 }
