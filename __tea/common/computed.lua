@@ -3,10 +3,10 @@ local function _get_container_engine()
 	local _prefers = am.app.get_configuration({ "containers", "engine" })
 	if type(_prefers) == "string" then return _prefers end
 	-- we prefer rootless setups so podman by default
-	if os.execute "podman --version > /dev/null" then
+	if os.execute "podman --version > /dev/null 2>&1" then
 		return "podman"
 	end
-	if os.execute "docker --version > /dev/null" then
+	if os.execute "docker --version > /dev/null 2>&1" then
 		return "docker"
 	end
 	return nil

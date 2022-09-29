@@ -1,11 +1,13 @@
 {
     "Lua.runtime.version": "Lua 5.4",
-	"Lua.misc.parameters": [ "--preview" ],
+    "Lua.misc.parameters": [
+        "--preview"
+    ],
     "Lua.workspace.library": [
         "./__tea/.ami-definitions/eli",
         "./__tea/.ami-definitions/ami"
     ],
-	"Lua.diagnostics.globals": [
+    "Lua.diagnostics.globals": [
         "cli",
         "env",
         "fs",
@@ -19,22 +21,18 @@
         "util",
         "ver",
         "zip",
-
         "am",
         "hjson",
-
-        "log_success", 
-        "log_trace", 
-        "log_debug", 
-        "log_info", 
-        "log_warn", 
+        "log_success",
+        "log_trace",
+        "log_debug",
+        "log_info",
+        "log_warn",
         "log_error",
         "ami_error",
         "ami_assert",
-
         "PLUGIN_IN_MEM_CACHE",
         "GLOBAL_LOGGER",
-        
         "EXIT_SETUP_ERROR",
         "EXIT_NOT_INSTALLED",
         "EXIT_NOT_IMPLEMENTED",
@@ -84,5 +82,14 @@
         "EXIT_PKG_MODEL_GENERATION_ERROR",
         "EXIT_INVALID_SOURCES_FILE",
         "EXIT_UNKNOWN_ERROR"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.ami-cache": true
+    }
 }
