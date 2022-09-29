@@ -4,7 +4,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/badge/License-MIT-green.svg?sanitize=true" alt="License"></a>
   <a href="https://discord.gg/WzqWTdD"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
-  <a href="hthttps://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alis-is/tea"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode" alt="Open in Remote - Containers"></a>
+  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alis-is/tea"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode" alt="Open in Remote - Containers"></a>
 </p>
 
 TEA is small, adaptable and **self contained** development environment for Tezos smart contracts.
