@@ -1,0 +1,13 @@
+{
+	"ignorePaths": [
+		"./__tea",
+		"./.devcontainer",
+		"./.vscode",
+		"./build",
+		"./deploy",
+		"./deploy",
+		"./web",
+		"./.git",
+		"./ami-cache"
+	]
+}
