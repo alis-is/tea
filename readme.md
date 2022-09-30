@@ -27,6 +27,17 @@ Start your new Tezos project faster than you prepare cup of tea. :)
 
 ## Get Started
 
+### With Dev Container
+
+1. Make sure you have [docker](https://docs.docker.com/engine/install/)
+To store repository within the container:
+2. Open dev container directly by clicking the container badge or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alis-is/tea).
+Or to store repository on local file system:
+1. Clone repository
+   - `git clone https://github.com/alis-is/tea.git`
+2. Choose `Reopen in Container` when prompted by VS Code.
+
+### Lightweight local setup
 1. Clone repository 
    - `git clone https://github.com/alis-is/tea.git`
 2. Get `eli` and `ami` (lua engines powering tea)

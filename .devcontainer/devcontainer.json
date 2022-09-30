@@ -1,10 +1,8 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-from-docker
 {
-	"name": "Docker from Docker",
+	"name": "TEA dev container",
 	"dockerFile": "Dockerfile",
 	"runArgs": ["--init"],
-	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
 	"overrideCommand": false,
 	
 	// Use this environment variable if you need to bind mount your local source code into a new container.
@@ -18,27 +16,14 @@
 		"vscode": {	
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"ms-azuretools.vscode-docker",
 				"sumneko.lua"
 			]
 		}
 	},
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// Sandbox is exposed by default no need to expose its ports here
 	// "forwardPorts": [],
 
 	"postCreateCommand": "ami setup && cd web && npm install",
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"build": {
-		"args": {
-			"INSTALL_ZSH": "false",
-			"ENABLE_NONROOT_DOCKER": "false",
-			"USE_MOBY": "false"
-		}
-	},
-	"features": {
-		"git-lfs": "latest",
-		"node": "lts"
-	}
 }
