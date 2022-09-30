@@ -7,7 +7,8 @@
 	
 	// Use this environment variable if you need to bind mount your local source code into a new container.
 	"remoteEnv": {
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+		"WORKSPACE_FOLDER": "/workspaces/tea"
 	},
 
 	// Configure tool-specific properties.
@@ -16,8 +17,12 @@
 		"vscode": {	
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"sumneko.lua"
-			]
+				"sumneko.lua",
+				"ligolang-publish.ligo-vscode"
+			],
+			"settings": {
+				"ligoLanguageServer.ligoBinaryPath": "/workspaces/tea/__tea/bin/ligo"
+			}
 		}
 	},
 	
