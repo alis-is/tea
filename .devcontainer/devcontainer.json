@@ -21,7 +21,7 @@
 				"ligolang-publish.ligo-vscode"
 			],
 			"settings": {
-				"ligoLanguageServer.ligoBinaryPath": "/workspaces/tea/__tea/bin/ligo"
+				"ligoLanguageServer.ligoBinaryPath": "ligo"
 			}
 		}
 	},
@@ -30,5 +30,5 @@
 	// Sandbox is exposed by default no need to expose its ports here
 	// "forwardPorts": [],
 
-	"postCreateCommand": "ami setup && cd web && npm install",
+	"postCreateCommand": "ami setup && ln -s /workspaces/tea/__tea/bin/ligo /usr/sbin/ligo && cd web && npm install"
 }
