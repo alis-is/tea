@@ -2,7 +2,7 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/alis-is/tea/main/__tea/assets/logo.svg" alt="TEA logo"></p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/badge/License-MIT-green.svg?sanitize=true" alt="License"></a>
+  <a href="https://raw.githubusercontent.com/alis-is/tea/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?sanitize=true" alt="License"></a>
   <a href="https://discord.gg/WzqWTdD"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
   <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/alis-is/tea"><img src="https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode" alt="Open in Remote - Containers"></a>
 </p>
