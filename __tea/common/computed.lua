@@ -26,6 +26,9 @@ local function _get_ligo_cmd()
 			IMAGE = _ligoContainer
 		})
 	end
+	if _globalLigo then
+		return "ligo"
+	end
 	return "./__tea/bin/ligo"
 end
 
