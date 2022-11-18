@@ -23,6 +23,7 @@ Start your new Tezos project faster than you prepare cup of tea. :)
 - eli and ami - for `ami` commands - only ~1.2MB
 - (optional) [podman](https://podman.io/getting-started/installation) or [docker](https://docs.docker.com/engine/install/)
 - (optional) [nodejs](https://nodejs.org/en/download/) for dapp development
+- (optional) [esy](https://esy.sh/) for access to ligo package management
 - For development on windows use [wsl2](https://docs.microsoft.com/en-us/windows/wsl/install)
 
 ## Get Started
