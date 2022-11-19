@@ -16,6 +16,7 @@ local _containerEngine = _get_container_engine()
 
 -- ligo
 local _ligoContainer = type(am.app.get_configuration({ "ligo", "image" })) == "string"
+local _globalLigo = am.app.get_configuration({ "ligo", "global" }, false) == true
 local _protocol = am.app.get_configuration({ "ligo", "protocol" })
 local _syntax = am.app.get_configuration({ "ligo", "syntax" }, "cameligo")
 local function _get_ligo_cmd()
@@ -24,6 +25,9 @@ local function _get_ligo_cmd()
 			ENGINE = _containerEngine,
 			IMAGE = _ligoContainer
 		})
+	end
+	if _globalLigo then
+		return "ligo"
 	end
 	return "./__tea/bin/ligo"
 end
@@ -47,6 +51,7 @@ end
 return {
 	ID = am.app.get("id", "tea-contract"),
 	USE_LIGO_CONTAINER = _ligoContainer,
+	USE_GLOBAl_LIGO = _globalLigo,
 	CONTAINER_ENGINE = _containerEngine,
 	SANDBOX_VARS = {
 		ENGINE = _containerEngine,

@@ -23,6 +23,7 @@ Start your new Tezos project faster than you prepare cup of tea. :)
 - eli and ami - for `ami` commands - only ~1.2MB
 - (optional) [podman](https://podman.io/getting-started/installation) or [docker](https://docs.docker.com/engine/install/)
 - (optional) [nodejs](https://nodejs.org/en/download/) for dapp development
+- (optional) [esy](https://esy.sh/) for access to ligo package management
 - For development on windows use [wsl2](https://docs.microsoft.com/en-us/windows/wsl/install)
 
 ## Get Started
@@ -45,7 +46,7 @@ Or to store repository on local file system:
 3. Install optional dependencies if needed
 4. (optional) Edit `app.hjson` to adjust template behavior
    - **You should set id to name of your project.** (Build and deploy commands use this id to name files)
-5. `ami setup` (Downloads ligo if needed)
+5. `ami setup` (Downloads ligo and runs `ligo install` if needed)
 6. (optional) to develop js module run `npm install` from within the `web` directory
 7. You are ready to code
 

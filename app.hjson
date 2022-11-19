@@ -25,6 +25,7 @@ configuration: {
 		}
 	}
 	ligo: {
+		// global: true
 		version: latest
 		// or exact
 		// version: 0.50.0
