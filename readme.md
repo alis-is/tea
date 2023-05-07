@@ -75,6 +75,10 @@ TEA provides bellow commands (see `--help` of each for details):
    - `ami deploy sandbox` to deploy to sandbox with default `app.hjson`
 5. Run `ami test-js` to test js-module
 
+### Debug
+You can examine all commands tea executes with log level debug:
+   - `ami -ll=debug <command>` e.g. `ami -ll=debug test`
+
 ## Development with VS Code
 
 1. Install [Lua extension from sumneko](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)

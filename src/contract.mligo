@@ -7,7 +7,7 @@
 #include "views/lock.mligo"
 #include "views/state.mligo"
 
-let main(action, store: action_type * storage_type): return_type =
+let main(action: action_type) (store: storage_type): return_type =
   match action with
     Increment n -> add (n, store)
   | Decrement n -> sub (n, store)

@@ -5,18 +5,22 @@ local _cmd = _computed.LIGO_VARS.LIGO .. " compile contract ${FILE} --entry-poin
 
 if _computed.COMPILE.TZ then
 	log_info("Compiling contract to ${ID}.tz...", _computed)
-	local _ok = os.execute(string.interpolate(_cmd, util.merge_tables(_computed.LIGO_VARS, {
+	local _cmd = string.interpolate(_cmd, util.merge_tables(_computed.LIGO_VARS, {
 		FORMAT = "text",
 		SUFFIX = ".tz"
-	})))
+	}))
+	log_debug(_cmd)
+	local _ok = os.execute(_cmd)
 	ami_assert(_ok, string.interpolate("Failed to compile contract ${ID}.tz", _computed))
 end
 
 if _computed.COMPILE.JSON then
 	log_info("Compiling contract to ${ID}.json...", _computed)
-	local _ok = os.execute(string.interpolate(_cmd, util.merge_tables(_computed.LIGO_VARS, {
+	local _cmd = string.interpolate(_cmd, util.merge_tables(_computed.LIGO_VARS, {
 		FORMAT = "json",
 		SUFFIX = ".json"
-	})))
+	}))
+	log_debug(_cmd)
+	local _ok = os.execute(_cmd)
 	ami_assert(_ok, string.interpolate("Failed to compile contract ${ID}.json", _computed))
 end
