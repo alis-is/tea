@@ -85,7 +85,9 @@ local function _install_dependencies()
 	ami_assert(_ok, "Invalid package.json!")
 	if #table.keys(_parsed.dependencies) > 0 then
 		log_info("Installing ligo dependencies...")
-	ami_assert(os.execute(string.interpolate("${LIGO} install", { LIGO = _ligoDestination })),
+	local _cmd = string.interpolate("${LIGO} install", { LIGO = _ligoDestination })
+	log_debug(_cmd)
+	ami_assert(os.execute(_cmd),
 		"Failed to install ligo dependencies!")
 	else
 		log_info("No ligo dependencies found. Skipping dependecy setup...")

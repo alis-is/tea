@@ -26,7 +26,9 @@ for id, vars in pairs(_computed.DEPLOYS) do
 			SUFFIX = ".tz",
 		})
 		log_info("Compiling initial storage tz for ${DEPLOY}...", _vars)
-		local _ok = os.execute(string.interpolate(_preprocessedCmd, _vars))
+		local _cmd = string.interpolate(_preprocessedCmd, _vars)
+		log_info(_cmd)
+		local _ok = os.execute(_cmd)
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _vars))
 	end
@@ -37,7 +39,9 @@ for id, vars in pairs(_computed.DEPLOYS) do
 			SUFFIX = ".json",
 		})
 		log_info("Compiling initial storage json for ${DEPLOY}...", _vars)
-		local _ok = os.execute(string.interpolate(_preprocessedCmd, _vars))
+		local _cmd = string.interpolate(_preprocessedCmd, _vars)
+		log_info(_cmd)
+		local _ok = os.execute(_cmd)
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _computed))
 	end

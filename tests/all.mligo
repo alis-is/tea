@@ -1,13 +1,13 @@
 #include "../src/contract.mligo"
 
 let test_deploy =
-	let initial_storage: storage_type = generate_initial_storage ("tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6": address) in
+	let initial_storage: storage_type = generate_initial_storage (("tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6": address), 0x00) in
 	let taddr, _, _ = Test.originate main initial_storage 0tez in
 	let storage = Test.get_storage taddr in
 	assert (storage.admin = initial_storage.admin && storage.state = initial_storage.state && storage.locked = initial_storage.locked)
 
 let test_add_locked_not_admin =
-	let initial_storage: storage_type = generate_initial_storage ("tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6": address) in
+	let initial_storage: storage_type = generate_initial_storage (("tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6": address), 0x00) in
 	let taddr, _, _ = Test.originate main initial_storage 0tez in
   	let contr = Test.to_contract taddr in
   	let result = Test.transfer_to_contract contr (Increment (1)) 0mutez in
@@ -24,7 +24,7 @@ let test_add_locked_not_admin =
 
 let test_add_locked_admin =
 	let addr = Test.nth_bootstrap_account 0 in
-	let initial_storage: storage_type = generate_initial_storage addr in
+	let initial_storage: storage_type = generate_initial_storage (addr, 0x00) in
 	let _ = Test.set_source addr in
 	let taddr, _, _ = Test.originate main initial_storage 0tez in
   	let contr = Test.to_contract taddr in
@@ -34,7 +34,7 @@ let test_add_locked_admin =
 
 let test_add_unlocked_admin =
 	let addr = Test.nth_bootstrap_account 0 in
-	let initial_storage: storage_type = generate_initial_storage addr in
+	let initial_storage: storage_type = generate_initial_storage (addr, 0x00) in
 	let _ = Test.set_source addr in
 	let taddr, _, _ = Test.originate main initial_storage 0tez in
   	let contr = Test.to_contract taddr in

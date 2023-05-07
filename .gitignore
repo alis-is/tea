@@ -8,6 +8,7 @@ __tea/bin/*
 
 # ligo
 **/.ligo-work
+.ligo
 
 # build
 build/*

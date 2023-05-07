@@ -8,15 +8,16 @@ local _checkCmd = "${TEZOS_CLIENT_PATH}" ..
 
 return function(options)
 	local _vars = util.merge_tables(_computed.SANDBOX_VARS, {
-		TEZOS_CLIENT_PATH = options.path or "tezos-client",
+		TEZOS_CLIENT_PATH = options.path or "octez-client",
 		BURN_CAP = options["burn-cap"] or "10",
 		CONTRACT_ID = _computed.ID,
 		SOURCE = options.source,
 		CONTRACT_CODE = string.trim(fs.read_file(string.interpolate("build/${ID}.tz", options))),
 		INITIAL_STORAGE = string.trim(fs.read_file(string.interpolate("build/${DEPLOYMENT_ID}-storage-${ID}.tz", options)))
 	}, true)
-
-	local _ok, _, _code = os.execute(string.interpolate(_deployCmd, _vars))
+	local _cmd = string.interpolate(_deployCmd, _vars)
+	log_debug(_cmd)
+	local _ok, _, _code = os.execute(_cmd)
 	if not _ok then error("exit code " .. tostring(_code)) end
 
 	local _result = proc.exec(string.interpolate(_checkCmd, _vars), { stdout = "pipe" })

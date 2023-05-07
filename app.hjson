@@ -5,14 +5,14 @@ configuration: {
 		sandbox: {
 			// alice key from sandbox
 			admin-addr: '"tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"'
-			kind: sandbox-tezos-client
-			// path: tezos-client
+			kind: sandbox-octez-client
+			// path: octez-client
 			source: alice
 			burn-cap: 5
 
-			// requires installed tezos-client
-			// 	kind: tezos-client
-			// 	// path: tezos-client
+			// requires installed octez-client
+			// 	kind: octez-client
+			// 	// path: octez-client
 			// 	source: alice
 			// burn-cap: 5
 		}
@@ -32,14 +32,14 @@ configuration: {
 		// or container
 		// image: ligolang/ligo:0.49.0
 		// syntax: cameligo
-		protocol: kathmandu
+		protocol: mumbai
 		// initial-storage-args: (${admin-addr}: address), ${metadata}
 	}
 	sandbox: {
 		// name: tezos-sandbox
 		// defaults to `sandbox-${id}`
-		image: oxheadalpha/flextesa:20220715
-		script: kathmandubox
+		image: registry.hub.docker.com/oxheadalpha/flextesa:20230313
+		script: mumbaibox
 		// rpc_port: 20000
 	}
 	metadata: {
