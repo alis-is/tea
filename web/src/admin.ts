@@ -9,6 +9,6 @@ export interface IOperatorOpParams {
 export class AdminContract extends Contract {
 	async setLock(locked: boolean) {
 		const contract = await this.get_contract();
-		return await contract.methodsObject.setLock(locked).send()
+		return await contract.methodsObject.set_lock(locked).send()
 	}
 }

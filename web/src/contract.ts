@@ -13,21 +13,11 @@ export class Contract {
 	private toolkit: TezosToolkit
 	private contractAddr: string
 
-	constructor(RPC_URL_or_TEZ_TOOLKIT: string, contractAddr: string, options: { signer: Signer })
-	constructor(RPC_URL_or_TEZ_TOOLKIT: TezosToolkit, contractAddr: string, options?: {})
-	constructor(RPC_URL_or_TEZ_TOOLKIT: string | TezosToolkit, contractAddr: string, options: { signer?: Signer } = {}) {
-		if (typeof RPC_URL_or_TEZ_TOOLKIT === "string") {
-			const toolkit = new TezosToolkit(RPC_URL_or_TEZ_TOOLKIT)
-			//toolkit.addExtension(new Tzip12Module());
-			toolkit.addExtension(new Tzip16Module());
-			toolkit.setProvider({ signer: options.signer });
-			if (typeof options !== "object") options = {};
-			this.toolkit = toolkit
-			this.contractAddr = contractAddr
-			return
-		}
+	constructor(toolkit: TezosToolkit, contractAddr: string, options: {} = {}) {
+		// toolkit.addExtension(new Tzip12Module());
+		toolkit.addExtension(new Tzip16Module());
 
-		this.toolkit = RPC_URL_or_TEZ_TOOLKIT
+		this.toolkit = toolkit
 		this.contractAddr = contractAddr
 	}
 

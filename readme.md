@@ -88,4 +88,4 @@ You can examine all commands tea executes with log level debug:
 ## Projects using this template
 
 - [Starlords](https://starlords.xyz/)
-- [BakeBuddy](https://www.bakebuddy.xyz/)
+- [TzC](https://tez.capital/)

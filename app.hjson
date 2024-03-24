@@ -32,14 +32,15 @@ configuration: {
 		// or container
 		// image: ligolang/ligo:0.49.0
 		// syntax: cameligo
-		protocol: mumbai
+		protocol: oxford2
 		// initial-storage-args: (${admin-addr}: address), ${metadata}
+		// module: C
 	}
 	sandbox: {
 		// name: tezos-sandbox
 		// defaults to `sandbox-${id}`
-		image: registry.hub.docker.com/oxheadalpha/flextesa:20230313
-		script: mumbaibox
+		image: docker.io/oxheadalpha/flextesa:20230915
+		script: nairobibox
 		// rpc_port: 20000
 	}
 	metadata: {

@@ -64,12 +64,12 @@ return {
 		LIGO = _get_ligo_cmd(),
 		CONTRACT_ID = am.app.get("id", "tea-contract"),
 		FILE = am.app.get_configuration({ "ligo", "contract-file" }, _find_file("src", "contract")),
-		ENTRYPOINT = am.app.get_configuration({ "ligo", "contract-entrypoint" }, "main"),
 		PROTOCOL = _protocol,
 		PROTOCOL_ARG = _protocol and "--protocol " .. _protocol or "",
 		SYNTAX = _syntax,
 		SYNTAX_ARG = "--syntax " .. _syntax,
 		BUILD_DIR = am.app.get_configuration({ "ligo", "build-directory" }, "build"),
+		MODULE = am.app.get_configuration({ "ligo", "module" }, "C"),
 	},
 	DEPLOYS = _deploys,
 	COMPILE = {

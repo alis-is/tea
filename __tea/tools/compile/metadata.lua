@@ -12,11 +12,13 @@ if _ok then
 		local _readyOcViews = {}
 		local _vars = util.merge_tables(_computed.LIGO_VARS, _computed.METADATA_VARS, true)
 		local _cmd = _computed.LIGO_VARS.LIGO .. " compile expression" ..
-			' ${SYNTAX} ${name}${OFFCHAIN_VIEW_EXP_SUFFIX} --init-file ${FILE} --michelson-format json ${PROTOCOL_ARG}'
+			' ${SYNTAX} ${MODULE}.${name}${OFFCHAIN_VIEW_EXP_SUFFIX} --init-file ${FILE} --michelson-format json ${PROTOCOL_ARG}'
 
 		for _, v in ipairs(_ocViews) do
 			log_info("Compiling offchain view '${name}'...", v)
-			local _result = proc.exec(string.interpolate(_cmd, util.merge_tables(_vars, v, true)), { stdout = "pipe" })
+			local toExecute = string.interpolate(_cmd, util.merge_tables(_vars, v, true))
+			log_trace(toExecute)
+			local _result = proc.exec(toExecute, { stdout = "pipe" })
 			ami_assert(_result.exitcode == 0, string.interpolate("Failed to compile ${name}!", v))
 			local _code = hjson.parse(_result.stdoutStream:read("a"))
 			local _ocv = util.clone(v, true)

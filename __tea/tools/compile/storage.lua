@@ -1,7 +1,7 @@
 local _computed = require "__tea.common.computed"
 
 local _cmd = _computed.LIGO_VARS.LIGO ..
-	" compile storage ${FILE} 'generate_initial_storage(${INITIAL_STORAGE_ARGS})'" ..
+	" compile storage ${FILE} --module ${MODULE} '${MODULE}.generate_initial_storage(${INITIAL_STORAGE_ARGS})'" ..
 	" --michelson-format \\${FORMAT} --output-file ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}\\${SUFFIX} ${PROTOCOL_ARG} ${SYNTAX_ARG}"
 
 function string.tohex(str)
@@ -27,7 +27,7 @@ for id, vars in pairs(_computed.DEPLOYS) do
 		})
 		log_info("Compiling initial storage tz for ${DEPLOY}...", _vars)
 		local _cmd = string.interpolate(_preprocessedCmd, _vars)
-		log_info(_cmd)
+		log_trace(_cmd)
 		local _ok = os.execute(_cmd)
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _vars))
@@ -40,7 +40,7 @@ for id, vars in pairs(_computed.DEPLOYS) do
 		})
 		log_info("Compiling initial storage json for ${DEPLOY}...", _vars)
 		local _cmd = string.interpolate(_preprocessedCmd, _vars)
-		log_info(_cmd)
+		log_trace(_cmd)
 		local _ok = os.execute(_cmd)
 		ami_assert(_ok,
 			string.interpolate("Failed to compile contract ${BUILD_DIR}/${DEPLOY}-storage-${CONTRACT_ID}.tz", _computed))

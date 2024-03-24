@@ -1,6 +1,6 @@
 local _computed = require "__tea.common.computed"
 
-local _cmd = _computed.LIGO_VARS.LIGO .. " compile contract ${FILE} --entry-point ${ENTRYPOINT}" ..
+local _cmd = _computed.LIGO_VARS.LIGO .. " compile contract ${FILE} --module ${MODULE}" ..
 	" --michelson-format ${FORMAT} --output-file ${BUILD_DIR}/${CONTRACT_ID}${SUFFIX} ${PROTOCOL_ARG} ${SYNTAX_ARG}"
 
 if _computed.COMPILE.TZ then
