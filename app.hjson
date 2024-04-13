@@ -28,10 +28,10 @@ configuration: {
 		// global: true
 		version: latest
 		// or exact
-		// version: 0.50.0
+		// version: 1.5.0
 		// or container
-		// image: ligolang/ligo:0.49.0
-		// syntax: cameligo
+		// image: ligolang/ligo:1.5.0
+		// syntax: jsligo
 		protocol: oxford2
 		// initial-storage-args: (${admin-addr}: address), ${metadata}
 		// module: C
@@ -39,8 +39,8 @@ configuration: {
 	sandbox: {
 		// name: tezos-sandbox
 		// defaults to `sandbox-${id}`
-		image: docker.io/oxheadalpha/flextesa:20230915
-		script: nairobibox
+		image: ghcr.io/tez-capital/tezbox:tezos-v19.1
+		script: oxfordbox
 		// rpc_port: 20000
 	}
 	metadata: {
